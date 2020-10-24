@@ -1,0 +1,38 @@
+$font-1: 'Josefin Sans', sans-serif; // good for small text
+$font-2: 'ABeeZee', sans-serif;  // good for small text 
+$font-3: 'Chewy', cursive;  // good for large text
+$font-4: 'Montserrat', sans-serif;
+$font-5: 'Poiret One', cursive;
+$font-6: 'Permanent Marker', cursive;
+$font-7: 'Grandstander', cursive;
+$font-8: 'Grenze Gotisch', cursive;
+$font-9:'Krona One', sans-serif;
+$font-10: 'Open Sans', sans-serif; //main
+
+$default-font-size: 1.6rem;
+
+//! pastal layout // 
+$color-main:#57799A;
+$color-main-light: #748FAA;
+$color-main-lighter: #8FA1B5;
+$color-main-dark: #385570;
+
+
+$color-secondary: #F6D911;
+$color-secondary-dark:#E58406;
+$color-secondary-darkest:#B37538; /* wood in logo */
+$color-secondary-light:#ffe980;
+
+$color-grey-light:#E1E0DE;
+$color-grey: #C9C4BA;
+$color-grey-dark:#707070;
+
+$color-white: #fff;
+$color-black: #000;
+//! pastal layout END // 
+
+.header--1{
+    font-size: 8rem;
+    font-weight: 600;
+    font-family: $font-3;
+}

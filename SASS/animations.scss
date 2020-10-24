@@ -1,0 +1,101 @@
+// aeroplanes that write name
+@keyframes fly-left {
+    0%{
+        right:-26rem;
+        opacity: 1;
+        top: -14rem;
+        transform: rotate(-58deg);
+        
+    }
+
+    10%{
+        top:20rem;
+        transform: rotate(-38deg);
+    }
+
+    20%{
+        top:5rem;
+        transform: rotate(60deg);
+    }
+
+    30%{
+        top:0rem;
+        transform: rotate(0deg);
+    }
+
+    40%{
+        
+        transform: rotate(10deg);
+    }
+
+    50%{
+        transform: rotate(0);
+    }
+
+    100%{
+        right:100%;
+        opacity: 1;
+        transform: rotate(0);
+        top:0rem;
+    }
+}
+
+
+@keyframes fly-right {
+    0%{
+        left:-26rem;
+        opacity: 1;
+        top: -14rem;
+        transform: rotate(58deg);
+        
+    }
+
+    10%{
+        top:20rem;
+        transform: rotate(38deg);
+    }
+
+    20%{
+        top:5rem;
+        transform: rotate(-60deg);
+    }
+
+    30%{
+        top:0rem;
+        transform: rotate(0deg);
+    }
+
+    40%{
+        
+        transform: rotate(10deg);
+    }
+
+    50%{
+        
+        transform: rotate(0);
+    }
+
+    100%{
+        left:100%;
+        top: 0;
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes smoke{
+
+    0%{
+        opacity: 0;
+        transform: rotateY(90deg);
+        filter: blur(1rem);
+    }
+
+    100%{
+        opacity: 1;
+        transform: rotateY(0);
+        filter: blur(0);
+    }
+}
+// aeroplanes that write name end
