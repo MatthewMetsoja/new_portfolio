@@ -1,6 +1,6 @@
 header{
-    
-    position: relative;
+    background-position: fixed;
+    height: 100%;
     background-color: $color-black;
 
     .plane__container{
@@ -26,7 +26,6 @@ header{
     .plane__image{
         height: 100%;
         width: 100%;
-        filter: sepia(100%);
     }
 
     .name{
@@ -36,16 +35,14 @@ header{
         padding: 4rem 0 0 0;
         grid-row: 1/2;
         color: $color-white;
-        letter-spacing: .1rem;
+        letter-spacing: -1.2rem;
 
         video{
             display: inline-block;
             position: absolute;
-            // z-index: -1 ;
             object-fit: cover;
             opacity: 0;
-            background-image: linear-gradient(rgba($color-white, .7), rgba($color-white, .7) );
-            background-blend-mode: screen;
+            background-blend-mode: color;
             transition: all 1s ease;
         }
 
@@ -64,7 +61,8 @@ header{
             &--matthew{
                 
                 & span{
-                    animation: smoke 1s linear .8s forwards;
+                    animation: rotateLetter 1s linear .8s forwards,
+                               flash 2s linear 7s;                            
                     opacity: 0;
                 }
 
@@ -98,16 +96,31 @@ header{
             
             }
 
+            
+            // for rainbow smoke rotateLetter
+            &--matthew::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height:100%;
+                background: linear-gradient(to right, $color-red, $color-blue, $color-orange, $color-green, $color-yellow, $color-purple, $color-turq, $color-pink);
+                pointer-events: none;
+                mix-blend-mode: color;
+            } 
 
             &--metsoja{
                 
                 & span{
-                    animation: smoke 1s linear 2s forwards;
+                    animation: rotateLetter 1s linear 2s forwards,          
+                               flash .8s linear 1s backwards;
                     opacity: 0;
                 }
 
                 & span:nth-child(1){
                     animation-delay: 2.9s;
+                  
                 }
 
                 & span:nth-child(2){
@@ -144,13 +157,174 @@ header{
     .nav{
         margin: auto 0;
         grid-row: 2/-1;
-       
+        z-index: 10;
+        // transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+        position: relative;
+        
+        animation: bringInNav 1.1s ease 7.5s backwards;
+        
         
         .menu{
+            
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin: 0 5rem;
             list-style: none;
+        
+
+            &__item{
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+
+                &__link
+                {
+                    color: $color-white;
+                    text-decoration: none;
+                    transition: all .2s ease;
+                    line-height: 1.1;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    font-family: $font-4;
+
+
+                    &__icon{
+                        height: 3rem;
+                        width: 3rem;
+                        fill: currentColor;       
+                    }
+                }
+
+                &__link:hover
+                {
+                  transform: translateY(1px) scale(1.03);
+                }
+
+                &__link:active
+                {
+                  transform: translateY(0) scale(1.04);;
+                }
+                
+            }
+
+            //? menu links normal state.
+            .neon-pink,
+            .neon-pink:link{
+                text-shadow: 0 0 .4rem $color-pink,
+                             0 0 1rem $color-pink,
+                             0 0 2rem $color-pink;
+            }
+
+            .neon-red,
+            .neon-red:link{
+                text-shadow: 0 0 .4rem $color-red,
+                             0 0 1rem $color-red,
+                             0 0 2rem $color-red;                  
+            }
+
+            .neon-green,
+            .neon-green:link{
+                text-shadow: 0 0 .4rem $color-green,
+                             0 0 1rem $color-green,
+                             0 0 2rem $color-green;                
+            }
+
+            .neon-orange,
+            .neon-orange:link{
+                text-shadow: 0 0 .4rem $color-orange,
+                             0 0 1rem $color-orange,
+                             0 0 2rem $color-orange;
+            }
+
+            //? menu links hover.
+            .neon-pink:hover{
+                text-shadow: 0 0 .4rem $color-pink,
+                             0 0 1rem $color-pink,
+                             0 0 2rem $color-pink; 
+                             
+                filter: drop-shadow(
+                    0 0px .1rem $color-pink
+                );                         
+            }
+
+            .neon-red:hover{
+                text-shadow: 0 0 .4rem $color-red,
+                             0 0 1rem $color-red,
+                             0 0 2rem $color-red; 
+                
+                filter: drop-shadow(
+                    0 0px .1rem $color-pink
+                );                              
+            }
+
+          
+            .neon-green:hover{
+                text-shadow: 0 0 .4rem $color-green,
+                             0 0 1rem $color-green,
+                             0 0 2rem $color-green;
+                
+                filter: drop-shadow(
+                0 0px .1rem $color-green
+                );  
+            }
+
+           
+            .neon-orange:hover{
+                text-shadow: 0 0 .4rem $color-orange,
+                             0 0 1rem $color-orange,
+                             0 0 2rem $color-orange;
+                
+                filter: drop-shadow(
+                0 0px .1rem $color-orange
+                );  
+            }
+
+
+              //? menu links active.
+            .neon-pink:active{
+                text-shadow: 0 0 .4rem $color-pink,
+                             0 0 1rem $color-pink,
+                             0 0 2rem $color-pink;
+
+                            filter: drop-shadow(
+                                0 1px .2rem $color-pink
+                           );
+            }
+
+            .neon-red:active{
+                text-shadow: 0 0 .4rem $color-red,
+                             0 0 1rem $color-red,
+                             0 0 2rem $color-red;
+
+                            filter: drop-shadow(
+                                0 1px .2rem $color-red
+                           );
+            }
+
+            .neon-green:active{
+                text-shadow: 0 0 .4rem $color-green,
+                             0 0 1rem $color-green,
+                             0 0 2rem $color-green;
+
+                            filter: drop-shadow(
+                                0 1px .2rem $color-green
+                           );
+            }
+
+            .neon-orange:active{
+                text-shadow: 0 0 .4rem $color-orange,
+                             0 0 1rem $color-orange,
+                             0 0 2rem $color-orange;
+
+                            filter: drop-shadow(
+                                0 1px .2rem $color-orange
+                           );
+            }
+
         }
     }
 

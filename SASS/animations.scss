@@ -3,23 +3,23 @@
     0%{
         right:-26rem;
         opacity: 1;
-        top: -14rem;
+        top: -24rem;
         transform: rotate(-58deg);
         
     }
 
     10%{
-        top:20rem;
+        top:30rem;
         transform: rotate(-38deg);
     }
 
     20%{
-        top:5rem;
+        top:15rem;
         transform: rotate(60deg);
     }
 
     30%{
-        top:0rem;
+        top:10rem;
         transform: rotate(0deg);
     }
 
@@ -36,7 +36,7 @@
         right:100%;
         opacity: 1;
         transform: rotate(0);
-        top:0rem;
+        top:10rem;
     }
 }
 
@@ -45,7 +45,7 @@
     0%{
         left:-26rem;
         opacity: 1;
-        top: -14rem;
+        top: -24rem;
         transform: rotate(58deg);
         
     }
@@ -56,12 +56,12 @@
     }
 
     20%{
-        top:5rem;
+        top:15rem;
         transform: rotate(-60deg);
     }
 
     30%{
-        top:0rem;
+        top:10rem;
         transform: rotate(0deg);
     }
 
@@ -71,20 +71,31 @@
     }
 
     50%{
-        
+        top:10rem;
         transform: rotate(0);
+    }
+
+    80%{
+        top:10rem;
+        transform: rotate(0deg);
+    }
+
+    90%{
+        top:30rem;
+        transform: rotate(20deg);
     }
 
     100%{
-        left:100%;
-        top: 0;
+        left:110%;
+        top: 40;
         transform: rotate(0);
         opacity: 1;
     }
+
 }
 
-
-@keyframes smoke{
+// rotate letters when plane flys by
+@keyframes rotateLetter{
 
     0%{
         opacity: 0;
@@ -98,4 +109,64 @@
         filter: blur(0);
     }
 }
-// aeroplanes that write name end
+
+// flash/flicker text .. 
+@keyframes flash{
+
+    0%,100%{
+        color:  $color-black;
+        filter: blur(1px);
+    }
+
+
+    5%,95%{
+        color: $color-white;
+        filter: blur(0);
+        text-shadow: 0 0 1rem none,
+    }
+}
+
+@keyframes bringInNav{
+    0%{
+        bottom: -10rem;
+        opacity: 0;
+    }
+
+    50%{
+        bottom: 1rem;
+        opacity: .3;
+    }
+
+    100%{
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+// W3 glow
+@keyframes glow {
+    from {
+      text-shadow: 0 0 1rem $color-white, 
+                    0 0 20px $color-blue, 
+                   0 0 30px $color-blue, 
+                   0 0 40px $color-blue; 
+    }
+    to {
+      text-shadow: 0 0 1rem $color-white,
+                   0 0 20px rgba($color-blue, .8), 
+                   0 0 30px $color-blue;
+    }
+  }
+
+// !Javascript classes
+// .fullName{
+//     transition: all 1s ease;
+//     text-shadow: 0 0 1rem $color-blue,
+//     0 0 2rem $color-blue,
+//     0 0 4rem $color-blue;
+ 
+// }
+
+.fullName{
+    animation: glow 1.2s ease-in infinite alternate;
+}

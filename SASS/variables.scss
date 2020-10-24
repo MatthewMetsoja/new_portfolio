@@ -1,27 +1,69 @@
+@mixin res($breakpoint){
+
+    @if($breakpoint == phone-400){
+        @media screen and (max-width:25em){@content};  // 400px 
+    };
+
+    @if($breakpoint == phone-500){
+        @media screen and (max-width:31.25em){@content};  // 500px 
+    };
+
+    @if($breakpoint == tab-port){
+        @media screen and (max-width:37.5em){@content};  // 600px
+    };
+
+    @if($breakpoint == tab-650){ 
+        @media screen and (max-width:40.625em){@content};  // 650px 
+    };
+
+    @if($breakpoint == tab-700){  
+        @media screen and (max-width:43.75em){@content};  // 750px 
+    };
+
+    @if($breakpoint == tab-800){
+        @media screen and (max-width:50em){@content};  // 800px 
+    };
+
+    @if($breakpoint == tab-land){
+        @media screen and (max-width:56.25em){@content}; // 900px
+    };
+
+    @if($breakpoint == desk){ 
+        @media screen and (max-width:75em){@content};  // 1200px
+    };
+
+    @if($breakpoint == desk-wide){ 
+        @media screen and (max-width:112.5em){@content}; // 1800px
+    };
+
+}
+
+
+
+
 $font-1: 'Josefin Sans', sans-serif; // good for small text
 $font-2: 'ABeeZee', sans-serif;  // good for small text 
 $font-3: 'Chewy', cursive;  // good for large text
-$font-4: 'Montserrat', sans-serif;
+$font-4: 'Montserrat', sans-serif; // main
 $font-5: 'Poiret One', cursive;
 $font-6: 'Permanent Marker', cursive;
 $font-7: 'Grandstander', cursive;
 $font-8: 'Grenze Gotisch', cursive;
 $font-9:'Krona One', sans-serif;
-$font-10: 'Open Sans', sans-serif; //main
+$font-10: 'Open Sans', sans-serif; 
 
 $default-font-size: 1.6rem;
 
-//! pastal layout // 
-$color-main:#57799A;
-$color-main-light: #748FAA;
-$color-main-lighter: #8FA1B5;
-$color-main-dark: #385570;
+//! neon layout // 
+$color-blue:#00b3ff;
+$color-red:  #ff005b;
+$color-green: #48ff85;
+$color-yellow:#ffff48;
+$color-orange:#ff7b00;
+$color-turq:#00fffb;
+$color-purple:#4800ff;
+$color-pink:#ff00e6;
 
-
-$color-secondary: #F6D911;
-$color-secondary-dark:#E58406;
-$color-secondary-darkest:#B37538; /* wood in logo */
-$color-secondary-light:#ffe980;
 
 $color-grey-light:#E1E0DE;
 $color-grey: #C9C4BA;
@@ -33,6 +75,7 @@ $color-black: #000;
 
 .header--1{
     font-size: 8rem;
-    font-weight: 600;
-    font-family: $font-3;
+    font-weight: 200;
+    font-family: $font-4;
 }
+

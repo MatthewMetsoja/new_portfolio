@@ -1,6 +1,6 @@
 .container{
     display: grid;
-    grid-template-rows: [header-start] max-content [header-end main-start]  minmax(80vh, max-content) [main-end footer-start] max-content [footer-end];
+    grid-template-rows: [header-start] 50rem [header-end main-start]  minmax(80vh, max-content) [main-end footer-start] max-content [footer-end];
    position: relative;
     grid-template-columns: repeat(8, 1fr);
 }
@@ -14,7 +14,7 @@
     // border-top: 5px; 
 }
 .main{
-    background-color: blue;
+    background-color: $color-white;
     grid-row: main-start/main-end;
     grid-column: 1/-1;
     z-index: 10;
