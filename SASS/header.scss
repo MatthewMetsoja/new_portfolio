@@ -1,6 +1,6 @@
 header{
-    background-position: fixed;
-    height: 100%;
+    
+    position: relative;
     background-color: $color-black;
 
     .plane__container{
@@ -158,10 +158,10 @@ header{
         margin: auto 0;
         grid-row: 2/-1;
         z-index: 10;
-        // transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+        transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
         position: relative;
         
-        animation: bringInNav 1.1s ease 7.5s backwards;
+        animation: bringInNav 1.1s ease 8s backwards;
         
         
         .menu{

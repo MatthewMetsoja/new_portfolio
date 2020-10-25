@@ -1,31 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Metsoja</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link
-    href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Chewy&family=Josefin+Sans:wght@100;200;300;400;500;700&family=Montserrat:wght@100;200;300;400;500;700;800;900&family=Permanent+Marker&family=Poiret+One&display=swap"
-    rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Chewy&family=Josefin+Sans:wght@100;200;300;400;500;700&family=Montserrat:wght@100;200;300;400;500;700;800;900&family=Permanent+Marker&family=Poiret+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <!--? Dont forget favicon
           <link rel="icon" type="image/png" href=""> -->
 </head>
+
 <body>
+    <div class="sticky" id="sticky">
+        <div class="sticky__nav">
+            <h1 id="stickyFullName" class="header--1 fullName">
+
+                <div class="name__container name__container--matthew">
+                    <span>M</span>
+                    <span>a</span>
+                    <span>t</span>
+                    <span>t</span>
+                    <span>h</span>
+                    <span>e</span>
+                    <span>w</span>
+                </div>
+                &nbsp; &nbsp;
+                <div class="name__container name__container--metsoja">
+                    <span>M</span>
+                    <span>e</span>
+                    <span>t</span>
+                    <span>s</span>
+                    <span>o</span>
+                    <span>j</span>
+                    <span>a</span>
+                </div>
+
+            </h1>
+
+            <div>
+                Burger Menu
+            </div>
+        </div>
+    </div>
+
     <div class="container">
-        <header class="header">
+        <header id="header" class="header">
             <section class="name">
-                
+
                 <figure id="plane-left" class="plane__container plane__container--left">
                     <img class="plane__image" src="../img/plane-w2.png" alt="cartoon plane">
                 </figure>
-                
-                 <video id="smokeVideo" muted>
-                     <source src="../img/smoke.mp4" type="video/mp4">
-                 </video>   
+
+                <video id="smokeVideo" muted>
+                    <source src="../img/smoke.mp4" type="video/mp4">
+                </video>
+
                 <h1 id="fullName" class="header--1 name__fullname">
-                   
+
                     <div class="name__container name__container--matthew">
                         <span>M</span>
                         <span>a</span>
@@ -36,47 +71,50 @@
                         <span>w</span>
                     </div>
                     &nbsp; &nbsp;
-                   <div class="name__container name__container--metsoja">
-                    <span>M</span>
-                    <span>e</span>
-                    <span>t</span>
-                    <span>s</span>
-                    <span>o</span>
-                    <span>j</span>
-                    <span>a</span> 
-                   </div>
-                        
+                    <div class="name__container name__container--metsoja">
+                        <span>M</span>
+                        <span>e</span>
+                        <span>t</span>
+                        <span>s</span>
+                        <span>o</span>
+                        <span>j</span>
+                        <span>a</span>
+                    </div>
+
                 </h1>
+
                 <figure id="plane-right" class="plane__container plane__container--right">
                     <img class="plane__image" src="../img/plane-w1.png" alt="cartoon plane">
                 </figure>
+
             </section>
+
             <nav class="nav">
                 <ul class="menu">
                     <li class="menu__item">
-                        <a class="menu__item__link neon-pink"href="#">
+                        <a class="menu__item__link neon-pink" href="#">
                             <svg class="menu__item__link__icon icon ">
                                 <use class="neon" xlink:href="../img/sprite.svg#icon-diamond"></use>
-                            </svg> 
-                            About me     
+                            </svg>
+                            About me
                         </a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__item__link neon-green" href="#">
-                           
+
                             <svg class="menu__item__link__icon icon">
                                 <use xlink:href="../img/sprite.svg#icon-lab"></use>
-                            </svg> 
+                            </svg>
                             Projects
                         </a>
                     </li>
 
                     <li class="menu__item">
-                        <a class="menu__item__link neon-red" href="#">   
+                        <a class="menu__item__link neon-red" href="#">
                             <svg class="menu__item__link__icon icon">
                                 <use xlink:href="../img/sprite.svg#icon-study"></use>
                             </svg>
-                            CV 
+                            CV
                         </a>
                     </li>
 
@@ -85,25 +123,26 @@
                             <svg class="menu__item__link__icon icon">
                                 <use xlink:href="../img/sprite.svg#icon-mail"></use>
                             </svg>
-                            Contact 
+                            Contact
                         </a>
                     </li>
                 </ul>
             </nav>
         </header>
-    <main class="main">
-        <div>main</div>
-        <div>mian</div>
-        <div>main</div>
-        <div>mian</div>
-        <div>main</div>
-        <div>mian</div>
-    </main>
-    <footer class="footer">
-        footer
-    </footer>  
-  
-</div>
-<script src="../JS/app.js"></script>
+        <main id="main" class="main">
+            <div>main</div>
+            <div>mian</div>
+            <div>main</div>
+            <div>mian</div>
+            <div>main</div>
+            <div>mian</div>
+        </main>
+        <footer class="footer">
+            footer
+        </footer>
+
+    </div>
+    <script src="../JS/app.js"></script>
 </body>
+
 </html>

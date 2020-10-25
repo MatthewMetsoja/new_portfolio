@@ -27,8 +27,12 @@ html{
         font-size: 50%; // 1rem = 8px, 8/16 = 50%
     }
 
-    @include res(phone-400){
+    @include res(phone-500){
         font-size: 43.75%; // 1rem = 7px
+    }
+
+    @include res(phone-400){
+        font-size: 37.5%; // 1rem = 6px
     }
     
 }
@@ -37,9 +41,7 @@ body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font: 400 $default-font-size $font-4;
-  
-    
+    font: 400 $default-font-size $font-4;   
 }
 
 

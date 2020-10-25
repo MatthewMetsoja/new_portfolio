@@ -1,6 +1,11 @@
 .container{
     display: grid;
     grid-template-rows: [header-start] 50rem [header-end main-start]  minmax(80vh, max-content) [main-end footer-start] max-content [footer-end];
+    
+    @include res(phone-500){
+        grid-template-rows: [header-start] 30rem [header-end main-start]  minmax(80vh, max-content) [main-end footer-start] max-content [footer-end];
+    }
+
    position: relative;
     grid-template-columns: repeat(8, 1fr);
 }
@@ -11,7 +16,6 @@
     grid-column: 1/-1;
     display: grid;
     grid-template-rows:  70% 1fr;
-    // border-top: 5px; 
 }
 .main{
     background-color: $color-white;
@@ -20,6 +24,7 @@
     z-index: 10;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    min-height: 120vh; // for testing navbar
 }
 .footer{
     background-color: yellow;
