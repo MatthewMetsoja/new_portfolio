@@ -156,17 +156,26 @@
                    0 0 20px rgba($color-blue, .8), 
                    0 0 30px $color-blue;
     }
-  }
+}
+
+@keyframes glow2 {
+    0%,100%{ color: $color-turq; filter: blur(1px);
+        text-shadow: 0 0 .2rem $color-pink, 
+                     0 0 .4rem $color-pink, 
+                     0 0 .7rem $color-pink, 
+                     0 0 8rem $color-pink,
+                     0 0 1.2rem $color-pink;
+                    
+    } 
+    5%,95%{ 
+        color: $color-white; 
+        filter: blur(0); 
+        text-shadow: 0 0 1rem none; 
+    } 
+}
+  
 
 // !Javascript classes
-// .fullName{
-//     transition: all 1s ease;
-//     text-shadow: 0 0 1rem $color-blue,
-//     0 0 2rem $color-blue,
-//     0 0 4rem $color-blue;
- 
-// }
-
-.fullName{
+.glow{
     animation: glow 1.2s ease-in infinite alternate;
 }

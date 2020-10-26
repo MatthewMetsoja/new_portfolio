@@ -68,6 +68,9 @@ body {
   margin: 0;
   font: 400 1.6rem "Montserrat", sans-serif; }
 
+a {
+  text-decoration: none; }
+
 .sticky {
   background-color: #000;
   color: #fff;
@@ -76,7 +79,9 @@ body {
   height: 5rem;
   position: fixed;
   display: flex;
-  top: -6rem; }
+  top: -6rem;
+  align-items: center;
+  transition: all .7 ease-in-out; }
   .sticky__nav {
     display: flex;
     justify-content: space-between;
@@ -88,6 +93,38 @@ body {
       font-size: 1.8rem;
       margin: 0 auto 0 1rem;
       letter-spacing: -2px; }
+    .sticky__nav .burger, .sticky__nav__fullname {
+      color: #fff;
+      text-shadow: 0 0 0.2rem #ff00e6, 0 0 0.4rem #ff00e6, 0 0 0.7rem #ff00e6, 0 0 8rem #ff00e6, 0 0 1.2rem #ff00e6; }
+    .sticky__nav__fullname:hover {
+      color: #ff00e6; }
+    .sticky__nav .burger:hover {
+      color: rgba(255, 0, 230, 0.9);
+      text-shadow: 0 0 0.2rem #4800ff, 0 0 0.4rem #4800ff, 0 0 0.7rem #4800ff, 0 0 8rem #4800ff, 0 0 1.2rem #4800ff; }
+
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 2.8rem;
+  width: 2.8rem; }
+  .burger__line {
+    position: relative;
+    width: 100%; }
+  .burger__line, .burger__line::before, .burger__line::after {
+    display: inline-block;
+    height: 1px;
+    width: 2.5rem;
+    background-color: currentColor;
+    box-shadow: 0 0 0.2rem #ff00e6, 0 0 0.4rem #ff00e6, 0 0 0.7rem #ff00e6, 0 0 8rem #ff00e6, 0 0 1.2rem #ff00e6; }
+  .burger__line::before, .burger__line::after {
+    content: "";
+    position: absolute; }
+  .burger__line::before {
+    top: -.8rem; }
+  .burger__line::after {
+    top: .8rem; }
 
 header {
   position: relative;
@@ -334,5 +371,15 @@ header {
   to {
     text-shadow: 0 0 1rem #fff, 0 0 20px rgba(0, 179, 255, 0.8), 0 0 30px #00b3ff; } }
 
-.fullName {
+@keyframes glow2 {
+  0%, 100% {
+    color: #00fffb;
+    filter: blur(1px);
+    text-shadow: 0 0 0.2rem #ff00e6, 0 0 0.4rem #ff00e6, 0 0 0.7rem #ff00e6, 0 0 8rem #ff00e6, 0 0 1.2rem #ff00e6; }
+  5%, 95% {
+    color: #fff;
+    filter: blur(0);
+    text-shadow: 0 0 1rem none; } }
+
+.glow {
   animation: glow 1.2s ease-in infinite alternate; }

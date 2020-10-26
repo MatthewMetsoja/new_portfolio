@@ -2,6 +2,7 @@ function headerLoad(){
 
     const smokeVid = document.getElementById("smokeVideo");
     const fullName = document.getElementById("fullName");
+    const fullNameSticky = document.getElementById("stickyFullName");
 
     function navScroll() {
 
@@ -21,9 +22,7 @@ function headerLoad(){
     function runSmoke(){
         setTimeout( () => {     
                  smokeVid.style.opacity = 1,
-                 smokeVid.play()
-                 
-        
+                 smokeVid.play()            
         }, 1000)
     };
    
@@ -37,14 +36,12 @@ function headerLoad(){
 
     function addNeon(){
         setTimeout( () => {
-            fullName.classList.add('fullName');  
+            fullName.classList.add('glow');  
         }, 8000);
     }
 
     window.addEventListener('scroll', navScroll);
     
-    
-
     runSmoke();
     removeVideo();
     addNeon();
