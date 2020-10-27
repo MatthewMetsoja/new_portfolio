@@ -1,0 +1,12 @@
+.hiddenCheck{
+    display: none;
+}
+
+.fullscreen-menu{
+    height: 0;
+    background-color: $color-green;
+    transition: all .4s ease-in;
+    position: relative;
+    top: 0;
+    display: block;
+}

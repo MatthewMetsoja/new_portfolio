@@ -173,9 +173,45 @@
         text-shadow: 0 0 1rem none; 
     } 
 }
-  
+
+// ! Burger menu stuff
+
+// hide middle of burger
+#hiddenCheck:checked ~ .sticky .burger__line{
+    display: block;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+// Create X when burger is clicked
+#hiddenCheck:checked ~ .sticky .burger__line::after{
+    transform: rotate(220deg);
+    top: 0;
+}
+// Create X when burger is clicked
+#hiddenCheck:checked ~ .sticky .burger__line::before{
+    transform: rotate(-220deg);
+    top: 0;
+}
+
+// Hide main content and show fullscreen  mobilemenu
+#hiddenCheck:checked ~ .fullscreen-menu{
+    background-color: $color-blue;
+    top: 0;
+    height: 100vh;
+}
+
+
+// Hide main content and show fullscreen  mobile menu
+#hiddenCheck:checked ~ .container{
+    display: none;
+}
+
+
+
 
 // !Javascript classes
 .glow{
     animation: glow 1.2s ease-in infinite alternate;
 }
+
