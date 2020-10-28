@@ -211,122 +211,109 @@ header{
                 
             }
 
-            //? menu links normal state.
-            .neon-pink,
-            .neon-pink:link{
-                text-shadow: 0 0 .4rem $color-pink,
-                             0 0 1rem $color-pink,
-                             0 0 2rem $color-pink;
-            }
-
-            .neon-red,
-            .neon-red:link{
-                text-shadow: 0 0 .4rem $color-red,
-                             0 0 1rem $color-red,
-                             0 0 2rem $color-red;                  
-            }
-
-            .neon-green,
-            .neon-green:link{
-                text-shadow: 0 0 .4rem $color-green,
-                             0 0 1rem $color-green,
-                             0 0 2rem $color-green;                
-            }
-
-            .neon-orange,
-            .neon-orange:link{
-                text-shadow: 0 0 .4rem $color-orange,
-                             0 0 1rem $color-orange,
-                             0 0 2rem $color-orange;
-            }
-
-            //? menu links hover.
-            .neon-pink:hover{
-                text-shadow: 0 0 .4rem $color-pink,
-                             0 0 1rem $color-pink,
-                             0 0 2rem $color-pink; 
-                             
-                filter: drop-shadow(
-                    0 0px .1rem $color-pink
-                );                         
-            }
-
-            .neon-red:hover{
-                text-shadow: 0 0 .4rem $color-red,
-                             0 0 1rem $color-red,
-                             0 0 2rem $color-red; 
-                
-                filter: drop-shadow(
-                    0 0px .1rem $color-pink
-                );                              
-            }
-
-          
-            .neon-green:hover{
-                text-shadow: 0 0 .4rem $color-green,
-                             0 0 1rem $color-green,
-                             0 0 2rem $color-green;
-                
-                filter: drop-shadow(
-                0 0px .1rem $color-green
-                );  
-            }
-
-           
-            .neon-orange:hover{
-                text-shadow: 0 0 .4rem $color-orange,
-                             0 0 1rem $color-orange,
-                             0 0 2rem $color-orange;
-                
-                filter: drop-shadow(
-                0 0px .1rem $color-orange
-                );  
-            }
-
-
-              //? menu links active.
-            .neon-pink:active{
-                text-shadow: 0 0 .4rem $color-pink,
-                             0 0 1rem $color-pink,
-                             0 0 2rem $color-pink;
-
-                            filter: drop-shadow(
-                                0 1px .2rem $color-pink
-                           );
-            }
-
-            .neon-red:active{
-                text-shadow: 0 0 .4rem $color-red,
-                             0 0 1rem $color-red,
-                             0 0 2rem $color-red;
-
-                            filter: drop-shadow(
-                                0 1px .2rem $color-red
-                           );
-            }
-
-            .neon-green:active{
-                text-shadow: 0 0 .4rem $color-green,
-                             0 0 1rem $color-green,
-                             0 0 2rem $color-green;
-
-                            filter: drop-shadow(
-                                0 1px .2rem $color-green
-                           );
-            }
-
-            .neon-orange:active{
-                text-shadow: 0 0 .4rem $color-orange,
-                             0 0 1rem $color-orange,
-                             0 0 2rem $color-orange;
-
-                            filter: drop-shadow(
-                                0 1px .2rem $color-orange
-                           );
-            }
-
         }
     }
 
+}
+
+//? Glowing links for sticky and normal nav.
+
+.neon-pink,
+.neon-pink:link{
+    @include backGlow($color-pink);  
 
 }
+.neon-pink:hover,
+.neon-pink:active{
+    @include SuperbackGlow($color-pink,0, 0, .1rem);                                         
+}
+
+.neon-pink__svg{
+    @include SuperbackGlow($color-pink,0, .5rem, .5rem);                                         
+}
+
+.neon-blue,
+.neon-blue:link{
+    @include backGlow($color-blue);  
+
+}
+.neon-blue:hover,
+.neon-blue:active{
+    @include SuperbackGlow($color-blue,0, 0, .1rem);                                         
+}
+
+.neon-blue__svg{
+    @include SuperbackGlow($color-blue,0, .5rem, .5rem);                                         
+}
+
+.neon-green,
+.neon-green:link{
+    @include backGlow($color-green);  
+
+}
+.neon-green:hover,
+.neon-green:active{
+    @include SuperbackGlow($color-green,0, 0, .1rem);                                         
+}
+
+.neon-green__svg{
+    @include SuperbackGlow($color-green,0, .5rem, .5rem);                                         
+}
+
+.neon-purple,
+.neon-purple:link{
+    @include backGlow($color-purple);  
+
+}
+.neon-purple:hover,
+.neon-purple:active{
+    @include SuperbackGlow($color-purple,0, 0, .1rem);                                         
+}
+
+.neon-purple__svg{
+    @include SuperbackGlow($color-purple, .3rem , .7rem, .5rem);                                         
+}
+
+.neon-turq,
+.neon-turq:link{
+    @include backGlow($color-turq);  
+
+}
+.neon-turq:hover,
+.neon-turq:active{
+    @include SuperbackGlow($color-turq,0, 0, .1rem);                                         
+}
+
+.neon-turq__svg{
+    @include SuperbackGlow($color-turq,0, .5rem, .5rem);                                         
+}
+
+.neon-red,
+.neon-red:link{
+    @include backGlow($color-red);  
+
+}
+.neon-red:hover,
+.neon-red:active{
+    @include SuperbackGlow($color-red,0, 0, .1rem);                                         
+}
+
+.neon-red__svg{
+    @include SuperbackGlow($color-red, .2rem , .7rem, .5rem);                                         
+}
+
+.neon-orange,
+.neon-orange:link{
+    @include backGlow($color-orange);  
+
+}
+.neon-orange:hover,
+.neon-orange:active{
+    @include SuperbackGlow($color-orange,0, 0, .1rem);                                         
+}
+
+.neon-orange__svg{
+    @include SuperbackGlow($color-orange,0, .5rem, .5rem);                                         
+}
+
+//? Glowing links for sticky and normal nav END //.

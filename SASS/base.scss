@@ -42,9 +42,14 @@ body {
     padding: 0;
     margin: 0;
     font: 400 $default-font-size $font-4;   
+    overflow-x: hidden;
 }
 
 a{
     text-decoration: none;
+}
+
+ul{
+    list-style: none;
 }
 

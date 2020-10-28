@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +14,46 @@
 </head>
 
 <body>
-    <input type="checkbox" id="hiddenCheck" class="hiddenCheck">
-    <div class="fullscreen-menu">
-           Mobile menu 
+    <input type="checkbox" id="hiddenCheck" hidden class="hiddenCheck">
+    <div class="fullscreen">
+        <nav class="fullscreen__nav">
+            <ul class="fullscreen__ul">
+                <li class="fullscreen__item">
+                    <a class="fullscreen__link neon-green" href="#">
+                        <svg class="fullscreen__svg neon-green__svg">
+                            <use class="fullscreen__svg__icon neon" xlink:href="../img/sprite.svg#icon-diamond"></use>
+                        </svg>
+                        About me
+                    </a>
+                </li>
+                <li class="fullscreen__item">
+                    <a class="fullscreen__link neon-orange" href="#">
+                       <svg class="fullscreen__svg neon-orange__svg">
+                            <use  xlink:href="../img/sprite.svg#icon-lab"></use>
+                        </svg>
+                        Projects
+                    </a>
+                </li>
+
+                <li class="fullscreen__item">
+                    <a class="fullscreen__link neon-turq" href="#">
+                       <svg class="fullscreen__svg neon-turq__svg">
+                            <use xlink:href="../img/sprite.svg#icon-study"></use>
+                        </svg>
+                        CV
+                    </a>
+                </li>
+
+                <li class="fullscreen__item">
+                    <a class="fullscreen__link neon-red" href="#">
+                       <svg class="fullscreen__svg neon-red__svg">
+                            <use xlink:href="../img/sprite.svg#icon-mail"></use>
+                        </svg>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
     <div class="sticky" id="sticky">
         <div class="sticky__nav">
@@ -101,8 +137,8 @@
                 <ul class="menu">
                     <li class="menu__item">
                         <a class="menu__item__link neon-pink" href="#">
-                            <svg class="menu__item__link__icon icon ">
-                                <use class="neon" xlink:href="../img/sprite.svg#icon-diamond"></use>
+                            <svg class="menu__item__link__icon">
+                                <use xlink:href="../img/sprite.svg#icon-diamond"></use>
                             </svg>
                             About me
                         </a>
@@ -110,7 +146,7 @@
                     <li class="menu__item">
                         <a class="menu__item__link neon-green" href="#">
 
-                            <svg class="menu__item__link__icon icon">
+                            <svg class="menu__item__link__icon">
                                 <use xlink:href="../img/sprite.svg#icon-lab"></use>
                             </svg>
                             Projects
@@ -119,7 +155,7 @@
 
                     <li class="menu__item">
                         <a class="menu__item__link neon-red" href="#">
-                            <svg class="menu__item__link__icon icon">
+                            <svg class="menu__item__link__icon">
                                 <use xlink:href="../img/sprite.svg#icon-study"></use>
                             </svg>
                             CV
@@ -128,7 +164,7 @@
 
                     <li class="menu__item">
                         <a class="menu__item__link neon-orange" href="#">
-                            <svg class="menu__item__link__icon icon">
+                            <svg class="menu__item__link__icon">
                                 <use xlink:href="../img/sprite.svg#icon-mail"></use>
                             </svg>
                             Contact

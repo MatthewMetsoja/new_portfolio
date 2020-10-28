@@ -175,6 +175,12 @@
 }
 
 // ! Burger menu stuff
+// Hide hidden input :) was still showing after burger was clicked
+.hiddenCheck{
+    display: none;
+    position:absolute; 
+    top:-5rem;
+}
 
 // hide middle of burger
 #hiddenCheck:checked ~ .sticky .burger__line{
@@ -195,19 +201,47 @@
 }
 
 // Hide main content and show fullscreen  mobilemenu
-#hiddenCheck:checked ~ .fullscreen-menu{
-    background-color: $color-blue;
+#hiddenCheck:checked ~ .fullscreen{
     top: 0;
     height: 100vh;
+    max-width: 100vw;
 }
-
 
 // Hide main content and show fullscreen  mobile menu
 #hiddenCheck:checked ~ .container{
-    display: none;
+    position: absolute; top: -9999px; left: -9999px;
 }
 
+// Hide main content and show fullscreen  mobile menu
+#hiddenCheck:checked ~ .fullscreen ul{
+    transform: translateY(0);
+    transition: all .4s ease-in;
+    opacity: 1;
+}
 
+#hiddenCheck:checked ~ .fullscreen .fullscreen__item:first-child{
+    transition: all 1.5s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#hiddenCheck:checked ~ .fullscreen .fullscreen__item:nth-child(2){
+    transition: all 2s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#hiddenCheck:checked ~ .fullscreen .fullscreen__item:nth-child(3){
+    transition: all 2.5s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#hiddenCheck:checked ~ .fullscreen .fullscreen__item:last-child{
+    transition: all 3s ease;
+    opacity: 1;
+    transform: translateX(0);
+}
 
 
 // !Javascript classes

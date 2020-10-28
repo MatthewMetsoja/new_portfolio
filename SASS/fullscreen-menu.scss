@@ -1,12 +1,55 @@
-.hiddenCheck{
-    display: none;
-}
 
-.fullscreen-menu{
+
+// mobile menu
+.fullscreen{
     height: 0;
-    background-color: $color-green;
+    background-color: $color-black;
     transition: all .4s ease-in;
     position: relative;
     top: 0;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-6;
+
+    &__ul{
+        transition: all.4s ease-in;
+        opacity: 0;
+       backface-visibility: hidden;
+    //    overflow: hidden;
+    }
+
+    &__item{
+         
+        &:nth-child(odd){
+            transform: translateX(1000rem);
+            opacity: 0;
+        }
+
+        &:nth-child(even){
+            transform: translateX(-1000rem);
+        }
+    }
+        
+    &__link{
+        display: flex;
+        align-items: center;
+        font-size: 3rem;
+        color: $color-white;
+    }
+
+    &__link:first-child{
+        animation: bringInLeft 2s ease-in .5s;
+    }
+
+    &__item:not(:last-child){
+        margin-bottom: 2rem;
+    }
+
+    &__svg{
+        height: 9rem;
+        width: 9rem;
+        margin-right: 2rem;
+        fill: $color-white;
+    }
 }

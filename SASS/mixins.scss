@@ -1,3 +1,26 @@
+@mixin backGlow($color){
+    
+        text-shadow: 0 0 .4rem $color,
+                     0 0 1rem $color,
+                     0 0 2rem $color;
+    
+}
+
+
+@mixin SuperbackGlow($color,$f_X ,$f_Y, $f_blur) {
+    
+    text-shadow: 0 0 .4rem $color,
+                 0 0 1rem $color,
+                 0 0 2rem $color;
+    
+    filter: drop-shadow(
+    $f_X $f_Y $f_blur $color
+    );  
+
+}
+
+
+
 
 @mixin res($breakpoint){
 

@@ -3,17 +3,7 @@ function headerLoad(){
     const smokeVid = document.getElementById("smokeVideo");
     const fullName = document.getElementById("fullName");
     const burger = document.getElementById('hiddenCheck');
-
-    
-    burger.addEventListener('click', () => {
-        if(burger.checked === false && YOffset <= main.offsetTop){
-            burger.style.display = 'none';            
-        }
-        else{
-            burger.style.display = 'flex';
-        }
-    });
-
+    const stickyNav = document.getElementById('sticky');
 
     function navScroll() {
         const stickyNav = document.querySelector(".sticky");
@@ -25,6 +15,7 @@ function headerLoad(){
         if (YOffset >= main.offsetTop || burger.checked === true) {
             stickyNav.style.top = 0;
             stickyNav.style.transition = 'all .4s ease';
+            stickyNav.style.display = 'flex';
         } else {
             stickyNav.style.top = '-6rem';
         }
@@ -56,7 +47,18 @@ function headerLoad(){
     runSmoke();
     removeVideo();
     addNeon();
-                   
+
+    burger.addEventListener('click', () => {
+        if(burger.checked === false) {   
+            stickyNav.style.top = '-20rem'; 
+        }
+        // else{
+           
+        // }
+    });
+
+    
+
 }
 
 
