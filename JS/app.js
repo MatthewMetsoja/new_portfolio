@@ -52,9 +52,6 @@ function headerLoad(){
         if(burger.checked === false) {   
             stickyNav.style.top = '-20rem'; 
         }
-        // else{
-           
-        // }
     });
 
     

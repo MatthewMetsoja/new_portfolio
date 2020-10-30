@@ -37,6 +37,12 @@ $color-black: #000;
     font-family: $font-4;
 }
 
+.header--2{
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: $font-4;
+}
+
 @include res(tab-600){
     .header--1{
         font-size: 6rem;
