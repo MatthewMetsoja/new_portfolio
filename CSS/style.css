@@ -400,10 +400,16 @@ header {
     border-right: 2px solid;
     padding: 2rem;
     min-height: 50rem;
-    position: relative; }
+    position: relative;
+    background-color: #00fffb; }
+    .aboutme .skills h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      margin-top: 2rem; }
     .aboutme .skills__next {
       position: relative;
-      top: 15rem; }
+      top: 15rem;
+      z-index: 100; }
       .aboutme .skills__next .btn {
         height: 3rem;
         width: 3rem;
@@ -412,21 +418,54 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
         border: none;
-        background: none; }
+        background: none;
+        transition: all .1s ease; }
+        .aboutme .skills__next .btn:focus, .aboutme .skills__next .btn:active {
+          border: none;
+          background: none;
+          outline: none; }
+        .aboutme .skills__next .btn:active {
+          transform: translateY(1px); }
+        .aboutme .skills__next .btn img {
+          height: 100%;
+          width: 100%;
+          cursor: pointer; }
         .aboutme .skills__next .btn--left {
           left: 0;
           position: absolute; }
         .aboutme .skills__next .btn--right {
           right: 0;
           position: absolute; }
+    .aboutme .skills__dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -1.5rem;
+      top: 33rem;
+      position: relative;
+      z-index: 110; }
+      .aboutme .skills__dots__indicator {
+        cursor: pointer;
+        border: none;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: rgba(0, 0, 0, 0.4); }
+        .aboutme .skills__dots__indicator:active, .aboutme .skills__dots__indicator:focus {
+          border: none;
+          outline: none; }
+        .aboutme .skills__dots__indicator--current {
+          background: black; }
+      .aboutme .skills__dots__indicator:not(:last-child) {
+        margin-right: 2rem; }
     .aboutme .skills__slide {
-      height: 30rem;
-      margin-top: 5rem; }
-      .aboutme .skills__slide--1 {
-        height: 30rem;
-        margin-top: 5rem; }
+      min-height: 30rem;
+      position: absolute;
+      left: 0;
+      width: 100%; }
+      .aboutme .skills__slide--current {
+        opacity: 1; }
       .aboutme .skills__slide__i-contain {
         display: flex;
         justify-content: center;
@@ -435,7 +474,7 @@ header {
         height: 17rem; }
       .aboutme .skills__slide__description {
         text-align: center;
-        padding: 0 4rem; }
+        padding: 0 6rem; }
     .aboutme .skills .skill {
       width: 12rem;
       margin: 4rem;
@@ -452,50 +491,59 @@ header {
         width: 10rem;
         background-size: cover;
         background-color: #ffff48; }
-    .aboutme .skills h2 {
-      text-align: center;
-      margin-bottom: 2rem; }
   .aboutme .about {
     padding: 2rem;
     flex: 0 0 50%;
     display: flex;
     justify-content: center; }
-  @media screen and (max-width: 40.625em) {
+  @media screen and (max-width: 75em) {
+    .aboutme .skills__dots {
+      top: 36rem; }
+    .aboutme .skills .skill {
+      margin: 1rem; }
+      .aboutme .skills .skill svg {
+        height: 9rem;
+        width: 9rem; }
+        .aboutme .skills .skill svg--js {
+          height: 9rem;
+          width: 9rem; } }
+  @media screen and (max-width: 56.25em) {
     .aboutme {
       flex-direction: column; }
       .aboutme .skills {
         flex: 1;
         border-right: none;
-        border-bottom: 2px solid;
         padding: 2rem;
-        order: 1; }
+        min-height: 45rem;
+        border-bottom: 2px solid #000; }
+        .aboutme .skills__dots {
+          top: 30rem; }
         .aboutme .skills .skill {
           margin: 2rem; }
       .aboutme .about {
-        order: -1;
         padding: 2rem;
         flex: 1;
         display: flex;
-        justify-content: center;
-        border-bottom: 2px solid #000; } }
+        justify-content: center; } }
   @media screen and (max-width: 31.25em) {
-    .aboutme .skills__next {
-      top: 10rem; }
-    .aboutme .skills h2 {
-      margin-bottom: 0; }
-    .aboutme .skills__slide--1 {
-      margin-top: 0; }
-    .aboutme .skills .skill {
-      margin: 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .aboutme .skills .skill .svg {
-        height: 7rem;
-        width: 7rem; }
-        .aboutme .skills .skill .svg--js {
+    .aboutme .skills {
+      margin-top: 0;
+      min-height: 42rem; }
+      .aboutme .skills__next {
+        top: 10rem; }
+      .aboutme .skills h2 {
+        margin-bottom: 0; }
+      .aboutme .skills .skill {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .aboutme .skills .skill .svg {
           height: 7rem;
-          width: 7rem; } }
+          width: 7rem; }
+          .aboutme .skills .skill .svg--js {
+            height: 7rem;
+            width: 7rem; } }
 
 @keyframes fly-left {
   0% {

@@ -182,11 +182,14 @@
                 <div class="skills">
                     <h2 class="header--2">My skills</h2>
                     <div class="skills__next">
-                        <button class="btn btn--left">&larr;</button> 
-                        <button class="btn btn--right">&rarr;</button> 
+                        <button class="btn btn--left">
+                            <img src="../Img/arrows/chevron-left.svg" alt="left chevron">
+                        </button>
+                        <button class="btn btn--right"><img src="../Img/arrows/chevron-right.svg"
+                                alt="right chevron"></button>
                     </div>
                     
-                    <div class="skills__slide skills__slide--1">
+                    <div class="skills__slide skills__slide--1 skills__slide--current">
                         <div class="skills__slide__i-contain">
                             <div class="skill skill--1">
                                 <svg class="svg">
@@ -216,7 +219,11 @@
                         </div>
                     </div>
                   
-                    <div><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="skills__dots">
+                        <button class="skills__dots__indicator dot1 skills__dots__indicator--current"></button>
+                        <button class="skills__dots__indicator dot2"></button>
+                        <button class="skills__dots__indicator dot3"></button>
+                    </div>
                    
                     <div class="skills__slide skills__slide--2"> 
                         <div class="skills__slide__i-contain">
@@ -230,12 +237,14 @@
                                  <svg class="svg">
                                 <use xlink:href="../img/sprite.svg#icon-react"></use>
                              </svg> 
+                             <div>React</div>
                             </div>
                  
                             <div class="skill skill--3">
                             <svg class="svg">
                                 <use xlink:href="../img/sprite.svg#icon-wordpress"></use>
                              </svg>
+                             <div>Wordpress</div>
                          </div>
                          </div>
                          <div class="skills__slide__description">
@@ -258,12 +267,14 @@
                             <svg class="svg">
                                 <use xlink:href="../img/sprite.svg#icon-adobexd"></use>
                              </svg>
+                             <div>Adobe XD</div>
                          </div>
                        
                          <div class="skill skill--3">
                             <svg class="svg">
                                 <use xlink:href="../img/sprite.svg#icon-github"></use>
                              </svg>
+                             <div>Git/Github</div>
                          </div>
                          </div>
                          <div class="skills__slide__description">
@@ -273,16 +284,7 @@
                                </p>
                         </div>
                      </div>
-                   
-                    
-                    
-                     
-                     
-                    
-                     
-                     
-
-                     
+                          
                 </div>
 
                 <div class="aboutme__about about">

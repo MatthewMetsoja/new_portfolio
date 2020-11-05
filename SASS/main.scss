@@ -5,8 +5,6 @@
   border-bottom: 2px solid;
 
 
-
-
   // skills is the container for the whole section
   .skills {
     flex: 0 0 50%;
@@ -14,13 +12,22 @@
     padding: 2rem;
     min-height: 50rem;
     position: relative;
+    background-color: $color-turq; // placeholder
+
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
 
     // left and right btns for carousel 
     &__next {
 
       position: relative;
       top: 15rem;
-
+      z-index: 100;
+      
       .btn {
 
         height: 3rem;
@@ -30,9 +37,29 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
         border: none;
         background: none;
+        transition: all .1s ease;
+
+
+        &:focus,
+        &:active{
+          border: none;
+          background: none;
+          outline: none;
+        }
+
+        &:active
+        {
+          transform: translateY(1px);
+        }
+            
+
+        img{
+          height: 100%;
+          width: 100%;
+          cursor: pointer;
+        }
 
         &--left {
           left: 0;
@@ -44,21 +71,64 @@
           position: absolute;
         }
 
+        
+
       }
 
+    }
+
+    // dot controllers for carousel
+    &__dots{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -1.5rem;
+      top: 33rem;
+      position: relative;
+      z-index: 110;
+
+      &__indicator{
+       cursor: pointer;
+       border: none;
+       border-radius: 50%;
+       width: 1.5rem;
+       height: 1.5rem;
+       background: rgba($color-black,.4);
+      
+       &:active,
+       &:focus{
+         border: none;
+         outline: none;
+       }
+
+       &--current{
+        background: rgba($color-black,1);
+       }
+      
+      }
+
+      &__indicator:not(:last-child){
+        margin-right: 2rem;
+      }
 
     }
 
 
-    // 3icon block slide
+  //  the container for each separate slide
     &__slide {
-      height: 30rem;
-      margin-top: 5rem;
+      min-height: 30rem;
+      position: absolute;
+      left: 0;
+    //  hide all background slides
+      // opacity: 0;
+      width: 100%;
 
-      &--1 {
-        height: 30rem;
-        margin-top: 5rem;
+      &--current{
+         //  show main slide
+        opacity: 1;
       }
+
+
 
       &__i-contain {
         display: flex;
@@ -71,12 +141,9 @@
       &__description {
 
         text-align: center;
-        padding: 0 4rem;
+        padding: 0 6rem;
 
       }
-
-
-
 
 
     }
@@ -108,11 +175,7 @@
 
     }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
+   
 
 
   }
@@ -126,44 +189,74 @@
 
   }
 
+  // Resize my skill svgs in carousel and carousel items
+  @include res(desk) {
+    .skills {
+
+      &__dots{
+        top: 36rem;
+      }
+
+      .skill {
+        margin: 1rem;
+
+        svg {
+
+          height: 9rem;
+          width: 9rem;
 
 
+          &--js {
+            height: 9rem;
+            width: 9rem;
+          }
+  
+        }
+      }
+  }
+
+  }
   //  Change layout to columns for mobile
-  @include res(tab-650) {
+  @include res(tab-land) {
 
     flex-direction: column;
 
     .skills {
       flex: 1;
       border-right: none;
-      border-bottom: 2px solid;
       padding: 2rem;
-      order: 1;
+      // order: 1;
+      min-height: 45rem;
+      border-bottom: 2px solid $color-black;
+
+      &__dots{
+        top: 30rem;
+      }
 
 
       .skill {
         margin: 2rem;
-       
       }
     }
 
     .about{
-      order: -1;
+      // order: -1;
       padding: 2rem;
       flex: 1;
       display: flex;
       justify-content: center;
-      border-bottom: 2px solid $color-black;
+     
 
     }
   }
 
 
   @include res(phone-500) {
-
-  
   
     .skills {
+
+      margin-top: 0;
+      min-height: 42rem;
 
       &__next{
         top:10rem;
@@ -171,9 +264,9 @@
       
       h2{margin-bottom: 0;}
 
-      &__slide--1{
-        margin-top: 0;
-      }
+      // &__slide--1{
+      //   margin-top: 0;
+      // }
      
       .skill {
         margin: 1rem;
@@ -195,9 +288,7 @@
         }
       }
     }
-      
-
-      
+         
     
   }
 
