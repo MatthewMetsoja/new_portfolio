@@ -5,6 +5,8 @@ function headerLoad(){
     const burger = document.getElementById('hiddenCheck');
     const stickyNav = document.getElementById('sticky');
 
+    const myskills = document.querySelector('.skills__container');
+
     function navScroll() {
         const stickyNav = document.querySelector(".sticky");
         
@@ -42,11 +44,18 @@ function headerLoad(){
         }, 8000);
     }
 
+    function bringInSkills(){
+        setTimeout( () =>{
+            myskills.style.transform = 'translateX(0)';
+        },1000);
+    }
+
     window.addEventListener('scroll', navScroll);
     
     runSmoke();
     removeVideo();
     addNeon();
+    bringInSkills();
 
     burger.addEventListener('click', () => {
         if(burger.checked === false) {   
@@ -76,115 +85,177 @@ function carousel() {
     // get the size of the slide container, this returns an array with all that good stuff.
     let slideWidth = slide1.getBoundingClientRect().width;
    
-    // update slide container width on resize;
-    window.onresize = function(){
-        slideWidth = slide1.getBoundingClientRect().width;
-        setSlidePositions();
-    }
-
     // arrange the slides original positions, added as function so we can use inside the page resize 
     function setSlidePositions(){
+        
+        // do slide movement
         slide1.style.left = 0;
         slide2.style.left = -slideWidth + 'px';
         slide3.style.left = -(slideWidth * 2) + 'px';
+
+          // add current class to slide
+          slide1.classList.add('skills__slide--current');
+          // remove it from the other slides   
+          slide2.classList.remove('skills__slide--current');
+          slide3.classList.remove('skills__slide--current');
     }
     
-    // as above
-    setSlidePositions();
+     // set default positions on load
+     setSlidePositions();
 
-    // when I click left move slide to the left
+    function setSlidePositions2(){
+        slide1.style.left = slideWidth + 'px';
+        slide2.style.left = 0
+        slide3.style.left = -slideWidth + 'px';
+
+         // add current class to slide
+         slide2.classList.add('skills__slide--current');
+         
+          // remove it from the other slides   
+          slide1.classList.remove('skills__slide--current');
+          slide3.classList.remove('skills__slide--current');
+
+           
+    }
+
+    function setSlidePositions3(){
+        slide1.style.left = (slideWidth * 2) + 'px';
+        slide2.style.left = slideWidth + 'px';
+        slide3.style.left = 0;
+
+         // add current class to slide
+         slide3.classList.add('skills__slide--current');
+         
+          // remove it from the other slides   
+          slide1.classList.remove('skills__slide--current');
+          slide2.classList.remove('skills__slide--current');
+
+          // update dots
+          indicatorArray[1].classList.remove('skills__dots__indicator--current');
+          indicatorArray[2].classList.add('skills__dots__indicator--current');
+    }
+    
+
+     //! Right button functionallity
+     rightBtn.addEventListener('click', () => {
+        
+        // get the current slide
+        let oldSlide = document.querySelector('.skills__slide--current');
+        
+        if(oldSlide.classList.contains('skills__slide--1')){
+            oldSlide.classList.remove('skills__slide--current');
+            document.querySelector('.skills__slide--2').classList.add('skills__slide--current');
+            
+            // move the slide
+            setSlidePositions2();
+            
+            // update dots
+            indicatorArray[0].classList.remove('skills__dots__indicator--current');
+            indicatorArray[1].classList.add('skills__dots__indicator--current');
+            
+            // show left back button 
+            leftBtn.style.visibility = 'visible';
+        }
+        else if(oldSlide.classList.contains('skills__slide--2')){
+            oldSlide.classList.remove('skills__slide--current');
+            document.querySelector('.skills__slide--3').classList.add('skills__slide--current');
+
+            setSlidePositions3();
+
+            
+
+              //  hide right button as we are on last slide
+            rightBtn.style.visibility = 'hidden';
+        }
+      
+    });
+
+   
+
+    //! Left button functionallity
     leftBtn.addEventListener('click', () => {
         
         // get the current slide
         let oldSlide = document.querySelector('.skills__slide--current');
         
-        if(oldSlide.classList.contains('skills__slide--1')){
+        // middle dot
+        if(oldSlide.classList.contains('skills__slide--2')){
             oldSlide.classList.remove('skills__slide--current');
-            document.querySelector('.skills__slide--3').classList.add('skills__slide--current');
-            
-            // update dots
-            indicatorArray[0].classList.remove('skills__dots__indicator--current');
-            indicatorArray[2].classList.add('skills__dots__indicator--current');
+            document.querySelector('.skills__slide--1').classList.add('skills__slide--current');
+
+             // update dots
+             indicatorArray[1].classList.remove('skills__dots__indicator--current');
+             indicatorArray[0].classList.add('skills__dots__indicator--current');
+
+            //  set slide back original 
+             setSlidePositions();
+
+             //  hide left button as we are on first slide
+            leftBtn.style.visibility = 'hidden';
         }
-        else if(oldSlide.classList.contains('skills__slide--3')){
+         // last dot
+         if(oldSlide.classList.contains('skills__slide--3')){
             oldSlide.classList.remove('skills__slide--current');
             document.querySelector('.skills__slide--2').classList.add('skills__slide--current');
+
+             //  set slide 
+             setSlidePositions2();
 
              // update dots
              indicatorArray[2].classList.remove('skills__dots__indicator--current');
              indicatorArray[1].classList.add('skills__dots__indicator--current');
-        }
-        else if(oldSlide.classList.contains('skills__slide--2')){
-            oldSlide.classList.remove('skills__slide--current');
-            document.querySelector('.skills__slide--1').classList.add('skills__slide--current');
 
-             // update dots
-             indicatorArray[1].classList.remove('skills__dots__indicator--current');
-             indicatorArray[0].classList.add('skills__dots__indicator--current');
+            //  reshow right button
+            rightBtn.style.visibility = 'visible';
         }
         console.log(oldSlide);
     });
-    // when I click right move slide to the right
-    rightBtn.addEventListener('click', () => {
-        
-        // get the current slide
-        let oldSlide = document.querySelector('.skills__slide--current');
-        
-        if(oldSlide.classList.contains('skills__slide--1')){
-            oldSlide.classList.remove('skills__slide--current');
-            document.querySelector('.skills__slide--2').classList.add('skills__slide--current');
-            
-            // update dots
-            indicatorArray[0].classList.remove('skills__dots__indicator--current');
-            indicatorArray[1].classList.add('skills__dots__indicator--current');
-        }
-        else if(oldSlide.classList.contains('skills__slide--2')){
-            oldSlide.classList.remove('skills__slide--current');
-            document.querySelector('.skills__slide--3').classList.add('skills__slide--current');
-
-             // update dots
-             indicatorArray[1].classList.remove('skills__dots__indicator--current');
-             indicatorArray[2].classList.add('skills__dots__indicator--current');
-        }
-        else if(oldSlide.classList.contains('skills__slide--3')){
-            oldSlide.classList.remove('skills__slide--current');
-            document.querySelector('.skills__slide--1').classList.add('skills__slide--current');
-
-             // update dots
-             indicatorArray[2].classList.remove('skills__dots__indicator--current');
-             indicatorArray[0].classList.add('skills__dots__indicator--current');
-        }
-        console.log(oldSlide);
-    });
-
-    // when I click the indicator move slide to indicated position
+    
+   
+   
+   
+    //! DOT indicator functionality
     dotsContainer.addEventListener('click', (e) => {
             
             // check we are not clicking on aready active, add the current class to the new target if ok
-            if (e.target.classList.contains('skills__dots__indicator') && !e.target.classList.contains('skills__dots__indicator--current')) {
+            if (e.target.classList.contains('skills__dots__indicator') && !e.target.classList.contains('skills__dots__indicator--current')){
        
-                // remove old current/active class
+                // remove old current/active class to DOTs
                 indicatorArray.forEach(i => {
                     if (i.classList.contains('skills__dots__indicator--current')) {
                         i.classList.remove('skills__dots__indicator--current');
                     }
                 });
 
-                // create a function to remove to old slide and bring the new one in
-                function moveSlide(){
-
-                }
-                
-                // add current class
+                  
+                // add current class 
                 e.target.classList.add('skills__dots__indicator--current');
                 if(e.target.classList.contains('dot1')){
-                    alert(1);
+
+                    // move slide back to original position 
+                    setSlidePositions();
+                  
+                    // remove left arrow if we are on slide 1
+                    leftBtn.style.visibility = 'hidden';
+
                 }
                 if(e.target.classList.contains('dot2')){
-                    alert(2);
+                   
+                    // move slide to middle position 
+                   setSlidePositions2();
+
+                    // show both arrows as we are on middle slide 
+                    leftBtn.style.visibility = 'visible';
+                    rightBtn.style.visibility = 'visible';
                 }
+
                 if(e.target.classList.contains('dot3')){
-                    alert(3);
+                    
+                    // move slide all the way over 
+                    setSlidePositions3();
+
+                    // hide right button as we can go no further
+                    rightBtn.style.visibility = 'hidden';
                 }
 
             }

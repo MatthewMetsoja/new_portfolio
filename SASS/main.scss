@@ -13,6 +13,12 @@
     min-height: 50rem;
     position: relative;
     background-color: $color-turq; // placeholder
+    
+    &__container{
+      transition: all .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transform: translateX(-200%);
+    }
+    
 
 
     h2 {
@@ -64,6 +70,7 @@
         &--left {
           left: 0;
           position: absolute;
+          visibility: hidden;
         }
 
         &--right {
@@ -116,11 +123,14 @@
 
   //  the container for each separate slide
     &__slide {
+      
+      transition: left .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+
       min-height: 30rem;
       position: absolute;
       left: 0;
     //  hide all background slides
-      // opacity: 0;
+      opacity: 0;
       width: 100%;
 
       &--current{
@@ -175,9 +185,6 @@
 
     }
 
-   
-
-
   }
 
 
@@ -186,6 +193,9 @@
     flex: 0 0 50%;
     display: flex;
     justify-content: center;
+    z-index: 400;
+    position: relative;
+    background-color: $color-white;
 
   }
 

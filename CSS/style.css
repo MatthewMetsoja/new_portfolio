@@ -402,6 +402,9 @@ header {
     min-height: 50rem;
     position: relative;
     background-color: #00fffb; }
+    .aboutme .skills__container {
+      transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transform: translateX(-200%); }
     .aboutme .skills h2 {
       text-align: center;
       margin-bottom: 2rem;
@@ -433,7 +436,8 @@ header {
           cursor: pointer; }
         .aboutme .skills__next .btn--left {
           left: 0;
-          position: absolute; }
+          position: absolute;
+          visibility: hidden; }
         .aboutme .skills__next .btn--right {
           right: 0;
           position: absolute; }
@@ -460,9 +464,11 @@ header {
       .aboutme .skills__dots__indicator:not(:last-child) {
         margin-right: 2rem; }
     .aboutme .skills__slide {
+      transition: left 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
       min-height: 30rem;
       position: absolute;
       left: 0;
+      opacity: 0;
       width: 100%; }
       .aboutme .skills__slide--current {
         opacity: 1; }
@@ -495,7 +501,10 @@ header {
     padding: 2rem;
     flex: 0 0 50%;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    z-index: 400;
+    position: relative;
+    background-color: #fff; }
   @media screen and (max-width: 75em) {
     .aboutme .skills__dots {
       top: 36rem; }
