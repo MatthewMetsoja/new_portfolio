@@ -41,18 +41,18 @@ function headerLoad(){
     function addNeon(){
         setTimeout( () => {
             fullName.classList.add('glow');  
-        }, 8000);
+        }, 14000);
     }
 
     function bringInSkills(){
         setTimeout( () =>{
             myskills.style.transform = 'translateX(0)';
-        },1000);
+        },2000);
     }
 
     window.addEventListener('scroll', navScroll);
     
-    runSmoke();
+    // runSmoke();
     removeVideo();
     addNeon();
     bringInSkills();
