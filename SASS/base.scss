@@ -8,6 +8,7 @@
 }
 
 html{
+    scroll-behavior: smooth;
 
     font-size: 62.5%;  // this defines what 1rem is! - 1 rem now = 10px, 10px/16px = 62.5%
 
@@ -42,6 +43,7 @@ body {
     padding: 0;
     margin: 0;
     font: 400 $default-font-size $font-4;  
+   
 }
 
 a{
@@ -52,3 +54,7 @@ ul{
     list-style: none;
 }
 
+
+.container{
+    scroll-snap-type: y mandatory;
+}

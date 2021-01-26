@@ -4,6 +4,7 @@ function headerLoad(){
     const fullName = document.getElementById("fullName");
     const burger = document.getElementById('hiddenCheck');
     const stickyNav = document.getElementById('sticky');
+    const firstDownArrow = document.querySelector('.down-arrow');
 
     const myskills = document.querySelector('.skills__container');
 
@@ -22,13 +23,25 @@ function headerLoad(){
             stickyNav.style.top = '-6rem';
         }
     }
+
+   
+
+    function watchIntro(){
+        document.body.classList.add('watchIntro');
+        firstDownArrow.style.display = 'none';
+
+        setTimeout( () => {
+            document.body.classList.remove('watchIntro');
+            firstDownArrow.style.display = 'inline-block';
+        }, 18000);
+    }
     
-    function runSmoke(){
-        setTimeout( () => {     
-                 smokeVid.style.opacity = 1,
-                 smokeVid.play()            
-        }, 1000)
-    };
+    // function runSmoke(){
+    //     setTimeout( () => {     
+    //              smokeVid.style.opacity = 1,
+    //              smokeVid.play()            
+    //     }, 1000)
+    // };
    
     function removeVideo(){
         setTimeout( () => {
@@ -50,12 +63,14 @@ function headerLoad(){
         },2000);
     }
 
-    window.addEventListener('scroll', navScroll);
+    // window.addEventListener('scroll', navScroll); //! disabled for now
     
     // runSmoke();
-    removeVideo();
+    // removeVideo();
+    watchIntro();
     addNeon();
     bringInSkills();
+   
 
     burger.addEventListener('click', () => {
         if(burger.checked === false) {   
